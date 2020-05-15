@@ -6,9 +6,6 @@ services:
       dockerfile: ./neuroimg/Dockerfile
     volumes:
       - ./Data:/data
-    environment:
-      bids_root: /data
-      derivatives_output_dir: /data/derivatives
     tty: true  # keep container running
     container_name: 'neuroimg'
 
