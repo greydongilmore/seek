@@ -1,6 +1,0 @@
-
-############# define list of files to run this for #############
-patients:
-  [
-    'la02'
-  ]

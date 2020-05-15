@@ -3,11 +3,11 @@ services:
   reconstruction:
     build: 
       context: . 
-      dockerfile: ./neuroimg/Dockerfile
+      dockerfile: seek/Dockerfile
     volumes:
       - ./Data:/data
     tty: true  # keep container running
-    container_name: 'neuroimg'
+    container_name: 'seek'
 
   localization:
     image: thebrainchain/bioimagesuite35:latest
