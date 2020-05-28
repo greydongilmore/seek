@@ -17,3 +17,25 @@ services:
       - ./Data:/data
     depends_on:
       - "reconstruction"
+
+    
+  mesh_generator:
+    container_name: mesh_generator
+    image: neuroseek/3d_reconstruction:latest
+    environment: 
+      SUBJECT: la02
+    volumes:
+      - ./Data:/data
+
+  mesh_visualizer:
+    container_name: mesh_visualizer
+    depends_on: 
+      - mesh_generator
+    image: neuroseek/recon_visualizer:latest
+    environment: 
+      SUBJECT: la02
+    ports: 
+      - 5000
+    volumes:
+      - ./Data:/data
+
